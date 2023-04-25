@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/postgres
+  IMAGE_NAME: ${{ github.repository_owner }}/postgres-cluster
 
 jobs:
 
@@ -58,4 +58,3 @@ jobs:
           PATRONI_VERSION=${{ env.PATRONI_VERSION }}
           CITUS_VERSION=${{ env.CITUS_VERSION }}
           WAL_G_VERSION=${{ env.WAL_G_VERSION }}
-          PG_ACOUSTID_VERSION=${{ env.PG_ACOUSTID_VERSION }}
