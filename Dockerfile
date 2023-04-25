@@ -21,14 +21,14 @@ RUN apt-get update && \
         postgresql-server-dev-$PG_MAJOR
 
 RUN python3 -m venv --system-site-packages /opt/patroni
-RUN /opt/patroni/bin/pip install "patroni==$PATRONI_VERSION"
+RUN /opt/patroni/bin/pip install "patroni==3.0.1"
 
 RUN python3 -m venv --system-site-packages /opt/yacron
 RUN /opt/yacron/bin/pip install yacron
 
 RUN mkdir -p /opt/wal-g/bin && \
     cd /opt/wal-g/bin && \
-    wget https://github.com/wal-g/wal-g/releases/download/v$WAL_G_VERSION/wal-g-pg-ubuntu-20.04-amd64.tar.gz && \
+    wget https://github.com/wal-g/wal-g/releases/download/v2.0.1/wal-g-pg-ubuntu-20.04-amd64.tar.gz && \
     tar xvf wal-g-pg-ubuntu-20.04-amd64.tar.gz && \
     mv wal-g-pg-ubuntu-20.04-amd64 wal-g && \
     rm *.tar.gz
